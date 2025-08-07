@@ -14,13 +14,17 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'npm test'
+                nodejs('nodejs') {
+                    sh 'npm test'
+                }
             }
         }
 
         stage('Deliver') {
             steps {
-                sh 'npm run build'
+                nodejs('nodejs') {
+                    sh 'npm build'
+                }
             }
         }
     }   
