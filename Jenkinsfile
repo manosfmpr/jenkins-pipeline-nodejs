@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("build app") {
+            steps {
+		        echo 'build with npm'
+                // Needs to have the same name as the NodeJS installation in Jenkins
+                nodejs('nodejs') {
+                    sh 'npm install'
+                }
+            }
+        }
+    }   
+}
