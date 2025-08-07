@@ -19,13 +19,5 @@ pipeline {
                 }
             }
         }
-
-        stage('Deliver') {
-            steps {
-                nodejs('nodejs') {
-                    sh 'npm build'
-                }
-            }
-        }
     }   
 }
